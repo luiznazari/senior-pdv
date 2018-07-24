@@ -1,0 +1,137 @@
+/* ==== GERAL ==== */
+
+.titulo {
+	-fx-font-size: 20.0px;
+	-fx-fill: #009999;
+	-fx-text-fill: #009999;
+	-fx-font-weight: bold;
+}
+
+.label {
+	-fx-vertical-align: middle;
+}
+
+.bolder {
+	-fx-font-weight: bold;
+}
+
+.form-horizontal .control-label {
+	-fx-text-wrap: true;
+	-fx-padding-right: 0.0;
+	-fx-text-alignment: right;
+	-fx-font-weight: normal;
+}
+
+.form-group {
+	-fx-padding: 0 0 15px 0;
+}
+
+.btn {
+	-fx-text-fill: #FFFFFF;
+	-fx-border-radius: 0.0;
+	-fx-font-weight: bold;
+	-fx-border-width: 4.0px;
+	-fx-text-transform: uppercase;
+}
+
+/* ==== CORES ==== */
+
+.bg-azul {
+	-fx-background-color: #009999;
+}
+
+.bg-branco {
+	-fx-background-color: #FFFFFF;
+}
+
+.bg-cinza {
+	-fx-background-color: #F5F5F5;
+}
+
+.azul {
+	-fx-text-fill: #009999;
+}
+
+.branco {
+	-fx-text-fill: #FFFFFF;
+}
+
+.btn.btn-azul {
+	-fx-border-color: #009999;
+	-fx-background-color: #009999;
+}
+
+.btn.btn-azul:hover {
+	-fx-border-color: #2d7773;
+}
+
+.btn.btn-azul:armed {
+	-fx-border-color: #009999;
+	-fx-background-color: #2d7773;
+}
+
+.btn.btn-xs {
+	-fx-padding: 2.0px 6.0px 2.0px 6.0px;
+}
+
+/* ==== NAVEGAÇÃO ==== */
+
+.menu:hover,
+.menu-bar:hover,
+.menu-item:hover,
+.context-menu:hover {
+	-fx-cursor: hand;
+}
+
+.menu-bar, .menu {
+	-fx-min-height: 40px;
+	-fx-background-color: #009999;
+}
+
+.menu {
+	-fx-padding: 0 15px;
+}
+
+.menu .label {
+	-fx-font-size: 16.0px;
+	-fx-text-fill: #ffffff;
+}	
+
+.menu-item {
+	-fx-padding: 3px 8px;
+}
+
+.menu-item .label {
+    -fx-text-fill: #2d7773;
+}
+
+.menu:hover,
+.menu:focused,
+.menu-item:focused {
+	-fx-background-color: #2d7773;
+}
+
+.menu-item:focused .label {
+	-fx-text-fill: #ffffff;
+}
+
+.context-menu {
+    -fx-padding: 5px 0;
+	-fx-min-width: 100px;
+    -fx-border-color: #009999;
+    -fx-border-width: 0 2px 2px 2px;
+    -fx-background-color: #fefefe;
+    -fx-background-insets: 0, 1, 2;
+}
+
+/* ==== TABELA ==== */
+
+table > tbody > tr > td {
+	-fx-height: 100%;
+	-fx-text-alignment: left;
+	-fx-vertical-align: middle;
+}
+
+.table-row-cell:selected .table-cell {
+	-fx-text-fill: #ffffff;
+}

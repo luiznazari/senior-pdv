@@ -1,0 +1,285 @@
+/**
+ * Fextile
+ * Twitter Bootstrap like UI framework for JavaFX. Apply themes to your application just like Twitter
+ * Bootstrap via JavaFX CSS. The name Fextile is the coined term, JavaFX + textile.
+ * Fonte: https://github.com/watermint/Fextile/blob/master/src/main/resources/fextile.css
+ */
+
+/**
+ * Base
+ */
+.root {
+	-fx-background-color: #ffffff;
+}
+
+.hbox,
+.vbox,
+.pane,
+.scroll-pane {
+	-fx-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	-fx-font-size: 14.0px;
+	-fx-background-color: transparent;
+}
+
+.accordion,
+.button,
+.cell,
+.check-box,
+.choice-box,
+.color-picker,
+.combo-box,
+.label,
+.list-cell,
+.text-area,
+.text-field {
+	-fx-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	-fx-font-size: 14.0px;
+	-fx-text-fill: #333333;
+}
+
+/**
+ * Controls
+ */
+.hyperlink {
+	-fx-text-fill: #428bca;
+}
+.hyperlink:hover,
+.hyperlink:focused {
+	-fx-text-fill: #2a6496;
+	-fx-underline: true;
+}
+
+.button {
+	-fx-border-radius: 4.0px;
+	-fx-background-radius: 4.0px;
+	-fx-padding: 6.0px 12.0px 6.0px 12.0px;
+}
+
+/**
+ * Style
+ */
+.small {
+	-fx-font-size: 85.0%;
+}
+.code, .kbd, .pre, .samp {
+	-fx-font-family: monospace, serif;
+	-fx-font-size: 14.0px; /* 1em; There are bugs on focus. size of 'em' copied and over wrote from other control.	*/
+}
+.text-muted {
+	-fx-text-fill: #999999;
+}
+.text-primary {
+	-fx-text-fill: #428bca;
+}
+.text-primary:hover {
+	-fx-text-fill: #3071a9;
+}
+.text-warning {
+	-fx-text-fill: #c09853;
+}
+.text-warning:hover {
+	-fx-text-fill: #a47e3c;
+}
+.text-danger {
+	-fx-text-fill: #b94a48;
+}
+.text-danger:hover {
+	-fx-text-fill: #953b39;
+}
+.text-success {
+	-fx-text-fill: #468847;
+}
+.text-success:hover {
+	-fx-text-fill: #356635;
+}
+.text-info {
+	-fx-text-fill: #3a87ad;
+}
+.text-info:hover {
+	-fx-text-fill: #2d6987;
+}
+.text-left {
+	-fx-text-alignment: left;
+}
+.text-center {
+	-fx-text-alignment: center;
+}
+.text-right {
+	-fx-text-alignment: right;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	-fx-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	-fx-font-weight: 500.0;
+}
+.h1,
+.h2,
+.h3 {
+	-fx-padding: 20.0px 0.0 10.0px 0.0;
+}
+.h4,
+.h5,
+.h6 {
+	-fx-padding: 10.0px 0.0 10.0px 0.0;
+}
+.h1 {
+	-fx-font-size: 36.0px;
+}
+.h2 {
+	-fx-font-size: 30.0px;
+}
+.h3 {
+	-fx-font-size: 24.0px;
+}
+.h4 {
+	-fx-font-size: 18.0px;
+}
+.h5 {
+	-fx-font-size: 14.0px;
+}
+.h6 {
+	-fx-font-size: 12.0px;
+}
+
+.page-header {
+	-fx-padding: 40.0px 0.0 29.0px 0.0;
+}
+
+.container {
+	-fx-padding: 0.0 15.0px 0.0 15.0px;
+}
+
+.alert {
+	/* margin-bottom: 20px; Cannot found way to configure margins via css */
+	-fx-padding: 15.0px;
+	-fx-gap-start-and-end: true;
+	-fx-border-style: solid;
+	-fx-border-width: 1.0px;
+	-fx-border-radius: 4.0px;
+}
+
+.alert-success {
+	-fx-background-color: #dff0d8;
+	-fx-border-color: #d6e9c6;
+	-fx-text-fill: #468847;
+}
+.alert-info {
+	-fx-background-color: #d9edf7;
+	-fx-border-color: #bce8f1;
+	-fx-text-fill: #3a87ad;
+}
+.alert-warning {
+	-fx-background-color: #fcf8e3;
+	-fx-border-color: #faebcc;
+	-fx-text-fill: #c09853;
+}
+.alert-danger {
+	-fx-background-color: #f2dede;
+	-fx-border-color: #ebccd1;
+	-fx-text-fill: #b94a48;
+}
+
+.btn-default {
+	-fx-text-fill: #ffffff;
+	-fx-background-color: #cacaca;
+	-fx-border-color: #cacaca;
+}
+.btn-default:hover {
+	-fx-border-color: #adadad;
+}
+.btn-default:armed {
+	-fx-border-color: #cacaca;
+	-fx-background-color: #adadad;
+}
+.btn-default:disabled {
+	-fx-background-color: #ffffff;
+	-fx-border-color: #cccccc;
+}
+
+.btn-primary {
+	-fx-text-fill: #ffffff;
+	-fx-background-color: #428bca;
+	-fx-border-color: #357ebd;
+}
+.btn-primary:hover {
+	-fx-border-color: #3276b1;
+}
+.btn-primary:armed {
+	-fx-border-color: #428bca;
+	-fx-background-color: #3276b1;
+}
+.btn-primary:disabled {
+	-fx-background-color: #428bca;
+	-fx-border-color: #357ebd;
+}
+
+.btn-warning {
+	-fx-text-fill: #ffffff;
+	-fx-background-color: #f0ad4e;
+	-fx-border-color: #eea236;
+}
+.btn-warning:hover {
+	-fx-border-color: #ed9c28;
+}
+.btn-warning:armed {
+	-fx-border-color: #f0ad4e;
+	-fx-background-color: #ed9c28;
+}
+.btn-warning:disabled {
+	-fx-background-color: #f0ad4e;
+	-fx-border-color: #eea236;
+}
+
+.btn-danger {
+	-fx-text-fill: #ffffff;
+	-fx-background-color: #d9534f;
+	-fx-border-color: #d9534f;
+}
+.btn-danger:hover {
+	-fx-border-color: #d2322d;
+}
+.btn-danger:armed {
+	-fx-border-color: #d9534f;
+	-fx-background-color: #d2322d;
+}
+.btn-danger:disabled {
+	-fx-background-color: #d9534f;
+	-fx-border-color: #d43f3a;
+}
+
+.btn-success {
+	-fx-text-fill: #ffffff;
+	-fx-background-color: #5cb85c;
+	-fx-border-color: #5cb85c;
+}
+.btn-success:hover {
+	-fx-border-color: #47a447;
+}
+.btn-success:armed {
+	-fx-border-color: #5cb85c;
+	-fx-background-color: #47a447;
+}
+.btn-success:disabled {
+	-fx-background-color: #5cb85c;
+	-fx-border-color: #4cae4c;
+}
+
+.btn-info {
+	-fx-text-fill: #ffffff;
+	-fx-background-color: #5bc0de;
+	-fx-border-color: #46b8da;
+}
+.btn-info:hover {
+	-fx-text-fill: #ffffff;
+	-fx-background-color: #39b3d7;
+	-fx-border-color: #269abc;
+}
+.btn-info:disabled {
+	-fx-background-color: #5bc0de;
+	-fx-border-color: #46b8da;
+}

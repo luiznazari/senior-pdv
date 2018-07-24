@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import desafio.senior.pdv.javafx.*?>
+
+<BorderPane prefHeight="439.0" prefWidth="612.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="desafio.senior.pdv.controller.ListaProdutoController">
+   <bottom>
+				<Pane prefHeight="63.0" prefWidth="640.0" styleClass="bg-cinza" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <FlowPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="36.0" prefWidth="612.0">
+               <children>
+      				<Text layoutX="14.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%lista.produto" wrappingWidth="585.083984375">
+      					<styleClass>
+      						<String fx:value="titulo" />
+      						<String fx:value="h1" />
+      					</styleClass>
+      				</Text>
+               </children>
+            </Pane>
+            <Pane prefHeight="61.0" prefWidth="612.0">
+               <children>
+                  <Button layoutX="14.0" layoutY="11.0" mnemonicParsing="false" text="%adicionar.produto" onAction="#redirecionarAdicionar">
+                     <styleClass>
+                        <String fx:value="btn" />
+                        <String fx:value="btn-azul" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane prefHeight="281.0" prefWidth="612.0">
+               <children>
+                  <TableView fx:id="tvProduto" layoutX="14.0" prefHeight="264.0" prefWidth="584.0" />
+               </children>
+            </Pane>
+         </children>
+      </FlowPane>
+   </center>
+</BorderPane>

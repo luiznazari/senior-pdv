@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<BorderPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="desafio.senior.pdv.controller.LoginController">
+   <center>
+      <FlowPane id="conteudo" styleClass="bg-cinza" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="29.0" prefWidth="600.0" styleClass="navbar" />
+            <Pane layoutY="50.0" prefHeight="387.0" prefWidth="350.0" styleClass="form-horizontal">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="75.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/logo.png" />
+                     </image>
+                  </ImageView>
+                  <Line endX="150.0" layoutX="175.0" layoutY="117.0" startX="-150.0" />
+                  <Pane layoutX="120.0" layoutY="104.41796875" styleClass="bg-cinza">
+                     <children>
+                        <Text fill="WHITE" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PDV" textAlignment="CENTER" wrappingWidth="110.0">
+                           <styleClass>
+                              <String fx:value="titulo" />
+                           </styleClass>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Label layoutX="25.0" layoutY="145.0" prefHeight="32.0" prefWidth="300.0" text="Login *">
+                     <styleClass>
+                        <String fx:value="control-label" />
+                        <String fx:value="label" />
+                     </styleClass>
+                  </Label>
+                  <Label layoutX="25.0" layoutY="217.0" prefHeight="30.0" prefWidth="300.0" text="Senha *" wrapText="true">
+                     <styleClass>
+                        <String fx:value="control-label" />
+                        <String fx:value="label" />
+                     </styleClass>
+                  </Label>
+                  <TextField fx:id="tfLogin" layoutX="25.0" layoutY="177.0" prefHeight="30.0" prefWidth="300.0" />
+                  <PasswordField fx:id="pfSenha" layoutX="25.0" layoutY="247.0" prefHeight="30.0" prefWidth="300.0" />
+                  
+                        <Button layoutX="25.0" layoutY="291.0" mnemonicParsing="false" onAction="#entrar" prefHeight="40.0" prefWidth="300.0" text="%entrar">
+                     <styleClass>
+                        <String fx:value="btn" />
+                        <String fx:value="btn-azul" />
+                     </styleClass>
+                  </Button>
+               </children>
+               <FlowPane.margin>
+                  <Insets left="125.0" right="125.0" />
+               </FlowPane.margin>
+            </Pane>
+            <Pane layoutY="364.0" prefHeight="50.0" prefWidth="600.0">
+               <styleClass>
+                  <String fx:value="footer" />
+               </styleClass>
+               <children>
+                  <Text fill="#3c3c3c" layoutX="291.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="small" text="Luiz Felipe Nazari" textAlignment="RIGHT" wrappingWidth="294.681640625" />
+                  <Text fill="#3c3c3c" layoutX="14.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="small" text="Contato:" wrappingWidth="262.681640625" />
+                  <Text fill="#3c3c3c" layoutX="14.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="small" text="luiz.nazari.42@gmail.com" wrappingWidth="262.681640625" />
+               </children>
+            </Pane>
+         </children>
+      </FlowPane>
+   </center>
+</BorderPane>

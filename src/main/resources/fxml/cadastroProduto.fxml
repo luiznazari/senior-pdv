@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import desafio.senior.pdv.javafx.*?>
+
+<BorderPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="desafio.senior.pdv.controller.CadastroProdutoController">
+   <center>
+		<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="381.0" prefWidth="640.0" BorderPane.alignment="CENTER">
+			<children>
+				<Text fx:id="txtTitulo" layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%novo.produto" wrappingWidth="143.083984375">
+					<styleClass>
+						<String fx:value="titulo" />
+						<String fx:value="h1" />
+					</styleClass>
+				</Text>
+            <FlowPane layoutX="14.0" layoutY="46.0" prefHeight="312.0" prefWidth="596.0" styleClass="form-horizontal">
+               <children>
+                  <Pane prefHeight="69.0" prefWidth="596.0" styleClass="form-group">
+                     <children>
+                        <Label prefHeight="24.0" prefWidth="596.0" text="%codigo">
+                           <styleClass>
+                              <String fx:value="label" />
+                              <String fx:value="control-label" />
+                           </styleClass>
+                        </Label>
+                        <LimitedTextField fx:id="tfCodigo" layoutY="24.0" prefHeight="30.0" prefWidth="582.0" maxLength="20" />
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="69.0" prefWidth="596.0" styleClass="form-group">
+                     <children>
+                        <Label prefHeight="24.0" prefWidth="596.0" text="%descricao">
+                           <styleClass>
+                              <String fx:value="label" />
+                              <String fx:value="control-label" />
+                           </styleClass>
+                        </Label>
+                        <LimitedTextField fx:id="tfDescricao" layoutY="24.0" prefHeight="30.0" prefWidth="582.0" maxLength="256" />
+                     </children>
+                  </Pane>
+                  <Pane styleClass="form-group">
+                     <children>
+                        <Label prefHeight="24.0" prefWidth="596.0" text="%valor">
+                           <styleClass>
+                              <String fx:value="label" />
+                              <String fx:value="control-label" />
+                           </styleClass>
+                        </Label>
+                        <NumericTextField fx:id="tfValor" layoutY="24.0" prefHeight="30.0" prefWidth="583.0" />
+                     </children>
+                  </Pane>
+               </children>
+            </FlowPane>
+			</children>
+		</AnchorPane>
+   </center>
+   <bottom>
+				<Pane prefHeight="63.0" prefWidth="640.0" styleClass="bg-cinza" BorderPane.alignment="CENTER">
+					<children>
+						<Button id="cancelarVenda" layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#onCancelar" text="%cancelar">
+							<styleClass>
+								<String fx:value="btn" />
+								<String fx:value="btn-default" />
+							</styleClass>
+						</Button>
+						<Button fx:id="btnSalvar" disable="true" layoutX="416.0" layoutY="12.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" text="%salvar" onAction="#salvar">
+							<styleClass>
+								<String fx:value="btn" />
+								<String fx:value="btn-success" />
+							</styleClass>
+						</Button>
+            <Button fx:id="btnExcluir" disable="true" layoutX="119.0" layoutY="12.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" text="%excluir" onAction="#excluir">
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="btn-danger" />
+               </styleClass>
+            </Button>
+					</children>
+				</Pane>
+   </bottom>
+</BorderPane>

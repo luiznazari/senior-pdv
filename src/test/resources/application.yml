@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/senior_pdv_test
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        temp:
+            use_jdbc_metadata_defaults: false
+
+flyway:
+  url: jdbc:postgresql://localhost:5432/senior_pdv_test
+  user: postgres
+  password: postgres
+
+logging:
+  level:
+    desafio:
+      senior: INFO
+    org:
+      springframework:
+        ws: DEBUG

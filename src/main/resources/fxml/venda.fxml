@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="417.0" prefWidth="638.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="desafio.senior.pdv.controller.VendaController">
+   <center>
+		<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="353.0" prefWidth="638.0" BorderPane.alignment="CENTER">
+			<children>
+				<Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%nova.venda" wrappingWidth="143.083984375">
+					<styleClass>
+						<String fx:value="titulo" />
+						<String fx:value="h1" />
+					</styleClass>
+				</Text>
+				<Text layoutX="14.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h4" text="%venda.atual" wrappingWidth="117.3828125" />
+				<Text fx:id="txtNumero" layoutX="131.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-" wrappingWidth="232.0">
+					<styleClass>
+						<String fx:value="label" />
+						<String fx:value="bolder" />
+					</styleClass>
+				</Text>
+				<Pane layoutX="14.0" layoutY="72.0">
+					<children>
+						<Text layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h4" text="%produtos" wrappingWidth="382.0" />
+						<TableView fx:id="tvProdutosVenda" layoutY="31.0" prefHeight="250.0" prefWidth="382.0" />
+					</children>
+				</Pane>
+				<Pane layoutX="415.0" layoutY="71.0" prefHeight="281.0" prefWidth="208.0">
+					<children>
+						<TextField fx:id="tfCodigoProduto" layoutY="32.0" prefHeight="30.0" prefWidth="208.0" />
+						<Button fx:id="btnAdicionarProduto" disable="true" layoutY="74.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="208.0" onAction="#adicionarProduto" text="%adicionar">
+							<styleClass>
+								<String fx:value="btn" />
+								<String fx:value="btn-azul" />
+							</styleClass>
+						</Button>
+						<Text layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h4" text="%produto" wrappingWidth="208.0" />
+						<Pane layoutY="139.0" prefHeight="142.0" prefWidth="208.0">
+							<children>
+								<Label layoutY="4.0" text="%qtd.produtos" />
+								<Label fx:id="lblQtdProdutos" layoutY="24.0" text="0">
+									<styleClass>
+										<String fx:value="label" />
+										<String fx:value="bolder" />
+									</styleClass>
+								</Label>
+								<Label fx:id="lblValorTotalProdutos" layoutY="71.0" text="0">
+									<styleClass>
+										<String fx:value="label" />
+										<String fx:value="bolder" />
+									</styleClass>
+								</Label>
+								<Label layoutY="51.0" text="%total" />
+                        <Label layoutX="37.0" layoutY="51.0" text="%simbolo.monetario" />
+							</children>
+						</Pane>
+					</children>
+				</Pane>
+            <Pane layoutY="353.0" prefHeight="18.0" prefWidth="638.0" />
+			</children>
+		</AnchorPane>
+   </center>
+   <bottom>
+				<Pane prefHeight="64.0" prefWidth="640.0" styleClass="bg-cinza" BorderPane.alignment="CENTER">
+					<children>
+						<Button fx:id="btnCancelarVenda" disable="true" layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#cancelarVenda" text="%cancelar.venda">
+							<styleClass>
+								<String fx:value="btn" />
+								<String fx:value="btn-danger" />
+							</styleClass>
+						</Button>
+						<Button fx:id="btnFinalizarVenda" disable="true" layoutX="493.0" layoutY="12.0" mnemonicParsing="false" onAction="#finalizarVenda" text="%finalizar.venda">
+							<styleClass>
+								<String fx:value="btn" />
+								<String fx:value="btn-success" />
+							</styleClass>
+						</Button>
+					</children>
+				</Pane>
+   </bottom>
+</BorderPane>

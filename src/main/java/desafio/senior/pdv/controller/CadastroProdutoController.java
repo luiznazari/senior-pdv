@@ -18,6 +18,7 @@ import desafio.senior.pdv.service.ProdutoService;
 import desafio.senior.pdv.service.SeniorValidacaoException;
 import desafio.senior.pdv.utils.Alertas;
 import desafio.senior.pdv.utils.EntidadeUtils;
+import desafio.senior.pdv.utils.NumeroUtils;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -108,7 +109,7 @@ public class CadastroProdutoController extends FxController {
 		produtoTela.setId(this.produto.getId());
 		produtoTela.setCodigo(tfCodigo.getText());
 		produtoTela.setDescricao(tfDescricao.getText());
-		produtoTela.setValor(NumberUtils.toDouble(tfValor.getText()));
+		produtoTela.setValor(NumeroUtils.arredondar(NumberUtils.toDouble(tfValor.getText())));
 		return produtoTela;
 	}
 	

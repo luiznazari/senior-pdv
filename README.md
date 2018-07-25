@@ -53,7 +53,7 @@ flyway:
 > Perfis: Administrador, Vendedor
 
 > Login: venda<br>
-> Senha: 12<br>
+> Senha: 123<br>
 > Perfis: Vendedor
 
 > Login: soadmin<br>

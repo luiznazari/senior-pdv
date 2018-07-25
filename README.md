@@ -20,7 +20,7 @@ Projeto de desafio - Aplicação Desktop
 4. Em caso de erros com dependências, execute o comando `Maven > update project` e então `Run As > maven install`;
 5. Configurar a conexão com banco de dados:
 	1. Criar os _schemas_ `senior_pdv` e `senior_pdv_test`;
-	2. Configurar URL de conexão, usuário e senha nos arquivos: `src/main/resources/application.yml` para conexão utilizada ao executar a aplicação e `src/main/resources/application.yml` para conexão utilizada ao executar testes de integração;
+	2. Configurar URL de conexão, usuário e senha nos arquivos: `src/main/resources/application.yml` para conexão utilizada ao executar a aplicação e `src/test/resources/application.yml` para conexão utilizada ao executar testes de integração;
 6. Executar a classe principal `desafio.senior.pdv.SeniorPdvApplication.java`.
 
 ## Configurando o `application.yml`:

@@ -42,6 +42,24 @@ flyway:
 # ...
 ```
 
+# Usuários pré-cadastrados
+
+> Login: luiz<br>
+> Senha: 123123<br>
+> Perfis: Administrador, Vendedor
+
+> Login: admin<br>
+> Senha: 123<br>
+> Perfis: Administrador, Vendedor
+
+> Login: venda<br>
+> Senha: 12<br>
+> Perfis: Vendedor
+
+> Login: soadmin<br>
+> Senha: 123<br>
+> Perfis: Administrador
+
 ---
 
 Desenvolvido por: Luiz Felipe Nazari (<luiz.nazari.42@gmail.com>).

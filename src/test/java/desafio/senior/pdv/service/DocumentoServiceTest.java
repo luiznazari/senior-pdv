@@ -6,7 +6,6 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import java.util.List;
-import java.util.Random;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Test;
@@ -123,7 +122,7 @@ public class DocumentoServiceTest extends TesteIntegracao {
 		Produto produto = new Produto();
 		produto.setCodigo(RandomStringUtils.random(20));
 		produto.setDescricao(RandomStringUtils.random(40));
-		produto.setValor(new Random().nextDouble() * 99);
+		produto.setValor(42.21);
 		return produtoRepository.save(produto);
 	}
 	

@@ -18,7 +18,7 @@
          <children>
             <Pane prefHeight="36.0" prefWidth="612.0">
                <children>
-      				<Text layoutX="14.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%lista.documento" wrappingWidth="585.083984375">
+      				<Text layoutX="14.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%vendas.realizadas" wrappingWidth="585.083984375">
       					<styleClass>
       						<String fx:value="titulo" />
       						<String fx:value="h1" />

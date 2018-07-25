@@ -1,8 +1,5 @@
 package desafio.senior.pdv.controller;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.AuthenticationException;
@@ -26,12 +23,6 @@ public class LoginController extends FxController {
 	private TextField tfLogin;
 	@FXML
 	private PasswordField pfSenha;
-	
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		tfLogin.setText("luiz");
-		pfSenha.setText("123123");
-	}
 	
 	@FXML
 	public void entrar() {

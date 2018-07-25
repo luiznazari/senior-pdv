@@ -2,28 +2,30 @@ package desafio.senior.pdv.model.dto;
 
 import java.util.function.BinaryOperator;
 
-import desafio.senior.pdv.model.Produto;
+import desafio.senior.pdv.model.DocumentoItem;
 
 public class ProdutoVendidoDTO implements Comparable<ProdutoVendidoDTO> {
 	
-	public static BinaryOperator<ProdutoVendidoDTO> REDUCE_FUNCTION = (acumulador, atual) -> {
+	public static final BinaryOperator<ProdutoVendidoDTO> REDUCE_FUNCTION = (acumulador, atual) -> {
 		acumulador.valor += atual.valor;
 		acumulador.quantidade += atual.quantidade;
 		return acumulador;
 	};
 	
 	private Long id;
+	private String codigo;
 	private String descricao;
 	private Integer quantidade;
 	private Double valor;
 	
 	public ProdutoVendidoDTO() {}
 	
-	public ProdutoVendidoDTO(Produto produto) {
-		this.id = produto.getId();
-		this.descricao = produto.getDescricao();
+	public ProdutoVendidoDTO(DocumentoItem item) {
+		this.id = item.getProduto().getId();
+		this.codigo = item.getProduto().getCodigo();
+		this.descricao = item.getProduto().getDescricao();
 		this.quantidade = 1;
-		this.valor = produto.getValor();
+		this.valor = item.getValorUnitario();
 	}
 	
 	public Long getId() {
@@ -32,6 +34,14 @@ public class ProdutoVendidoDTO implements Comparable<ProdutoVendidoDTO> {
 	
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	public String getCodigo() {
+		return codigo;
+	}
+	
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
 	}
 	
 	public String getDescricao() {
@@ -60,7 +70,7 @@ public class ProdutoVendidoDTO implements Comparable<ProdutoVendidoDTO> {
 	
 	@Override
 	public int compareTo(ProdutoVendidoDTO o) {
-		return this.descricao.compareToIgnoreCase(o.descricao);
+		return this.codigo.compareToIgnoreCase(o.codigo);
 	}
 	
 }

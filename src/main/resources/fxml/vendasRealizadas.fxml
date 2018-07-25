@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import desafio.senior.pdv.javafx.*?>
+
+<BorderPane prefHeight="439.0" prefWidth="612.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="desafio.senior.pdv.controller.VendasRealizadasController">
+   <bottom>
+				<Pane prefHeight="63.0" prefWidth="640.0" styleClass="bg-cinza" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <FlowPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="36.0" prefWidth="612.0">
+               <children>
+      				<Text layoutX="14.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%lista.documento" wrappingWidth="585.083984375">
+      					<styleClass>
+      						<String fx:value="titulo" />
+      						<String fx:value="h1" />
+      					</styleClass>
+      				</Text>
+               </children>
+            </Pane>
+            <Pane prefHeight="340.0" prefWidth="612.0">
+               <children>
+                  <TableView fx:id="tvProdutosVendidos" layoutX="14.0" layoutY="171.0" prefHeight="159.0" prefWidth="584.0" />
+                  <Label layoutX="14.0" layoutY="6.0" prefHeight="40.0" prefWidth="180.0" style="-fx-text-alignment: right;" text="%quantidade.vendas" textAlignment="RIGHT">
+                     <styleClass>
+                        <String fx:value="h5" />
+                        <String fx:value="text-right" />
+                     </styleClass>
+                  </Label>
+                  <Label fx:id="lblQtdVendas" layoutX="200.0" layoutY="6.0" prefHeight="40.0" prefWidth="390.0" style="-fx-text-alignment: right;" text="Label" textAlignment="RIGHT">
+                     <styleClass>
+                        <String fx:value="h5" />
+                        <String fx:value="bolder" />
+                     </styleClass>
+                  </Label>
+                  <Label fx:id="lblQtdProdutosVendidos" layoutX="200.0" layoutY="46.0" prefHeight="40.0" prefWidth="390.0" style="-fx-text-alignment: right;" text="Label" textAlignment="RIGHT">
+                     <styleClass>
+                        <String fx:value="h5" />
+                        <String fx:value="bolder" />
+                     </styleClass>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="46.0" prefHeight="40.0" prefWidth="180.0" style="-fx-text-alignment: right;" text="%quantidade.produtos.vendidos" textAlignment="RIGHT">
+                     <styleClass>
+                        <String fx:value="h5" />
+                        <String fx:value="text-right" />
+                     </styleClass>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="86.0" prefHeight="40.0" prefWidth="180.0" style="-fx-text-alignment: right;" text="%valor.total.vendido" textAlignment="RIGHT">
+                     <styleClass>
+                        <String fx:value="h5" />
+                        <String fx:value="text-right" />
+                     </styleClass>
+                  </Label>
+                  <Label fx:id="lblValorTotalVendido" layoutX="200.0" layoutY="86.0" prefHeight="40.0" prefWidth="390.0" style="-fx-text-alignment: right;" text="Label" textAlignment="RIGHT">
+                     <styleClass>
+                        <String fx:value="h5" />
+                        <String fx:value="bolder" />
+                     </styleClass>
+                  </Label>
+                  <Text layoutX="15.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h4" text="%relacao.produtos.vendidos" wrappingWidth="582.205078125" />
+               </children>
+            </Pane>
+         </children>
+      </FlowPane>
+   </center>
+</BorderPane>

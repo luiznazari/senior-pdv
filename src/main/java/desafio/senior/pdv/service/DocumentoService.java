@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import desafio.senior.pdv.model.Documento;
 import desafio.senior.pdv.repository.DocumentoRepository;
+import desafio.senior.pdv.utils.EntidadeUtils;
 
 @Service
 @Transactional(propagation = Propagation.REQUIRED,
@@ -23,7 +24,10 @@ public class DocumentoService extends AbstractCrudService<Documento, DocumentoRe
 		documento.setItens(null);
 		documento.setValorTotal(null);
 		documento.setConfirmado(true);
-		return getRepository().findAll(Example.of(documento));
+		
+		List<Documento> documentos = getRepository().findAll(Example.of(documento));
+		documentos.forEach(doc -> EntidadeUtils.lazyInitialize(doc.getItens()));
+		return documentos;
 	}
 	
 }

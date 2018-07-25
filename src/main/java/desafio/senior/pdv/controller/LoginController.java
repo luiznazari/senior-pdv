@@ -24,7 +24,6 @@ public class LoginController extends FxController {
 	
 	@FXML
 	private TextField tfLogin;
-	
 	@FXML
 	private PasswordField pfSenha;
 	

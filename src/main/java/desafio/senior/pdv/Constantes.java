@@ -2,11 +2,12 @@ package desafio.senior.pdv;
 
 public abstract class Constantes {
 	
+	public static final String SIM = "sim";
+	public static final String NAO = "nao";
 	public static final String TITULO_APLICACAO = "Senior PDV";
 	public static final String EDITAR_PRODUTO = "editar.produto";
 	public static final String CANCELAR_VENDA = "cancelar.venda";
-	public static final String SIM = "sim";
-	public static final String NAO = "nao";
+	public static final String VENDA_FINALIZADA_SUCESSO = "venda.finalizada.sucesso";
 	
 	public static final String ERRO_INESPERADO = "erro.inesperado";
 	public static final String ERRO_SENHA_INCORRETA = "erro.senha.incorreta";

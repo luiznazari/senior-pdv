@@ -21,6 +21,10 @@ public abstract class Alertas {
 	
 	private Alertas() {}
 	
+	public static void sucesso(String chave) {
+		mostrarAlerta(chave, AlertType.INFORMATION);
+	}
+	
 	public static void alerta(String chave) {
 		mostrarAlerta(chave, AlertType.WARNING);
 	}

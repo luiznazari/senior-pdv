@@ -27,7 +27,7 @@ public class ListaProdutoController extends FxController {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		this.criarColunasTabela(resources);
-		produtoRepository.findAll(JpaSort.by("descricao")).forEach(this::adicionarProdutoNaTabela);
+		produtoRepository.findAll(JpaSort.by("codigo")).forEach(this::adicionarProdutoNaTabela);
 	}
 	
 	private void criarColunasTabela(ResourceBundle resources) {

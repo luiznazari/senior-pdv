@@ -82,7 +82,7 @@ public class VendaController extends FxController {
 				.comLargura(40.0)
 				.comPropriedadeIgualNome()
 				.finalizar()
-			.coluna("descricao")
+			.coluna("valor")
 				.comLargura(25.0)
 				.comPropriedadeIgualNome()
 				.finalizar()
@@ -150,6 +150,7 @@ public class VendaController extends FxController {
 			txtNumero.setText(documento.getNumero().toString());
 		}
 		
+		btnAdicionarProduto.setDisable(true);
 		tfCodigoProduto.setText(StringUtils.EMPTY);
 		btnCancelarVenda.setDisable(documento.getNumero() == null);
 		btnFinalizarVenda.setDisable(!documento.isPossuiItens());
@@ -157,6 +158,7 @@ public class VendaController extends FxController {
 	
 	public void finalizarVenda() {
 		vendaService.finalizarVenda(documento);
+		Alertas.sucesso(Constantes.VENDA_FINALIZADA_SUCESSO);
 		scenes.alterarTela(VendaController.class);
 	}
 	

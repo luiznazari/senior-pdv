@@ -11,7 +11,7 @@ import org.springframework.stereotype.Controller;
 
 import desafio.senior.pdv.javafx.TableViewBuilder;
 import desafio.senior.pdv.model.Documento;
-import desafio.senior.pdv.model.Produto;
+import desafio.senior.pdv.model.DocumentoItem;
 import desafio.senior.pdv.model.dto.ProdutoVendidoDTO;
 import desafio.senior.pdv.model.dto.ProdutoVendidoDTOBuilder;
 import desafio.senior.pdv.service.DocumentoService;
@@ -27,9 +27,11 @@ public class VendasRealizadasController extends FxController {
 	private DocumentoService documentoService;
 	
 	@FXML
-	private Label lblValorTotalVenda;
+	private Label lblQtdVendas;
 	@FXML
-	private Label lblQuantidadeVendas;
+	private Label lblValorTotalVendido;
+	@FXML
+	private Label lblQtdProdutosVendidos;
 	@FXML
 	private TableView<ProdutoVendidoDTO> tvProdutosVendidos;
 	
@@ -46,9 +48,13 @@ public class VendasRealizadasController extends FxController {
 	private void criarTabelaProdutosVendidos(ResourceBundle resourcesBundle) {
 		// @formatter:off
 		new TableViewBuilder<>(tvProdutosVendidos, resourcesBundle)
+			.coluna("codigo")
+				.comPropriedadeIgualNome()
+				.comLargura(15.0)
+				.finalizar()
 			.coluna("descricao")
 				.comPropriedadeIgualNome()
-				.comLargura(60.0)
+				.comLargura(45.0)
 				.finalizar()
 			.coluna("quantidade")
 				.comPropriedadeIgualNome()
@@ -66,17 +72,19 @@ public class VendasRealizadasController extends FxController {
 		Double valorTotalVendido = documentosConfirmados.stream().map(Documento::getValorTotal)
 			.reduce((total, atual) -> total + atual).orElse(NumberUtils.DOUBLE_ZERO);
 		
-		lblValorTotalVenda.setText(NumeroUtils.formatarBr(valorTotalVendido));
-		lblQuantidadeVendas.setText(String.valueOf(documentosConfirmados.size()));
+		lblQtdVendas.setText(String.valueOf(documentosConfirmados.size()));
+		lblValorTotalVendido.setText(NumeroUtils.formatarBr(valorTotalVendido));
 	}
 	
 	private void atualizarDadosProdutosVendidos() {
-		List<Produto> todosProdutos = new ArrayList<>();
+		List<DocumentoItem> todosItensVendidos = new ArrayList<>();
+		
 		documentosConfirmados
 			.forEach(doc -> doc.getItens()
-				.forEach(item -> todosProdutos.add(item.getProduto())));
+				.forEach(todosItensVendidos::add));
+		lblQtdProdutosVendidos.setText(String.valueOf(todosItensVendidos.size()));
 		
-		List<ProdutoVendidoDTO> produtosVendidos = new ProdutoVendidoDTOBuilder(todosProdutos).build();
+		List<ProdutoVendidoDTO> produtosVendidos = new ProdutoVendidoDTOBuilder(todosItensVendidos).build();
 		produtosVendidos.forEach(prod -> tvProdutosVendidos.getItems().add(prod));
 	}
 	

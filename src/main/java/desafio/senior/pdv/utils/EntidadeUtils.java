@@ -16,7 +16,7 @@ public interface EntidadeUtils {
 	
 	static void lazyInitialize(Object... entidades) {
 		for (Object entidade : entidades) {
-			if (entidade != null && Hibernate.isInitialized(entidade)) {
+			if (entidade != null && !Hibernate.isInitialized(entidade)) {
 				Hibernate.initialize(entidade);
 			}
 		}

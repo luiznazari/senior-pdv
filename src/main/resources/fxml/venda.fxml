@@ -39,7 +39,7 @@
 								<String fx:value="btn-azul" />
 							</styleClass>
 						</Button>
-						<Text layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h4" text="%produto" wrappingWidth="208.0" />
+						<Text layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h4" text="%codigo.produto" wrappingWidth="208.0" />
 						<Pane layoutY="139.0" prefHeight="142.0" prefWidth="208.0">
 							<children>
 								<Label layoutY="4.0" text="%qtd.produtos" />

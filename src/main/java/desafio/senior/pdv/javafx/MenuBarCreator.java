@@ -64,7 +64,9 @@ public class MenuBarCreator {
 		
 		menuBar.getMenus().add(this.criarMenuPrincipal());
 		
-		menuBar.getMenus().add(this.criarMenuVendas());
+		if (usuario != null) {
+			menuBar.getMenus().add(this.criarMenuVendas());
+		}
 		
 		if (administrador) {
 			menuBar.getMenus().add(this.criarMenuProdutos());

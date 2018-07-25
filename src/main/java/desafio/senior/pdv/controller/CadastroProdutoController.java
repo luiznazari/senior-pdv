@@ -15,6 +15,8 @@ import desafio.senior.pdv.javafx.LimitedTextField;
 import desafio.senior.pdv.javafx.NumericTextField;
 import desafio.senior.pdv.model.Produto;
 import desafio.senior.pdv.service.ProdutoService;
+import desafio.senior.pdv.service.SeniorValidacaoException;
+import desafio.senior.pdv.utils.Alertas;
 import desafio.senior.pdv.utils.EntidadeUtils;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -85,6 +87,7 @@ public class CadastroProdutoController extends FxController {
 		
 		Arrays.stream(campos)
 			.forEach(tf -> tf.addEventFilter(KeyEvent.KEY_RELEASED, eventFilterHabilitarSalvar));
+		eventFilterHabilitarSalvar.handle(null);
 	}
 	
 	@Override
@@ -110,10 +113,12 @@ public class CadastroProdutoController extends FxController {
 	}
 	
 	public void excluir() {
-		if (this.produto.getCodigo() != null) {
+		try {
 			produtoService.excluir(this.produto);
+			scenes.alterarTela(ListaProdutoController.class);
+		} catch (SeniorValidacaoException e) {
+			Alertas.alerta(e.getMessage());
 		}
-		scenes.alterarTela(ListaProdutoController.class);
 	}
 	
 }

@@ -15,6 +15,7 @@ public abstract class Constantes {
 	public static final String ERRO_USUARIO_NAO_ENCONTRADO = "erro.usuario.nao.encontrado";
 	public static final String ERRO_VENDA_JA_CONTEM_PRODUTO = "erro.venda.ja.contem.produto";
 	public static final String ERRO_FINALIZAR_VENDA_NAO_CRIADA = "erro.finalizar.venda.nao.criada";
+	public static final String ERRO_EXISTE_PRODUTO_DOCUMENTO_ITEM = "erro.existe.produto.documento.item";
 	public static final String ERRO_NENHUM_PRODUTO_ENCONTRADO_CODIGO = "erro.produto.nao.encontrado.codigo";
 	
 	private Constantes() {}

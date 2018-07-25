@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import desafio.senior.pdv.model.Entidade;
+import desafio.senior.pdv.utils.EntidadeUtils;
 
 /**
  * Abstração dos comportamentos de services da aplicação. Centraliza o processo
@@ -59,8 +60,10 @@ public abstract class AbstractCrudService<E extends Entidade, R extends JpaRepos
 	}
 	
 	public final void excluir(E entidade) {
-		validacoesExcluir(entidade);
-		this.getRepository().delete(entidade);
+		if (EntidadeUtils.isNotNull(entidade)) {
+			validacoesExcluir(entidade);
+			this.getRepository().delete(entidade);
+		}
 	}
 	
 	protected void validacoesSalvar(E entidade) {

@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
@@ -35,6 +36,7 @@ public class Produto implements Entidade {
 	@Column(length = 256, nullable = false)
 	private String descricao;
 	
+	@Digits(integer = 12, fraction = 2)
 	@NotNull(message = "{erro.valor.vazio}")
 	@Column(nullable = false)
 	private Double valor = NumberUtils.DOUBLE_ZERO;

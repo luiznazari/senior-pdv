@@ -46,7 +46,7 @@ public class NumericTextField extends LimitedTextField {
 	private boolean isReplaceValido(int start, int end, String replaceText) {
 		String text = this.getText();
 		String replaced = new StringBuilder(text).replace(start, end, replaceText).toString();
-		return NumberUtils.isParsable(replaced);
+		return NumberUtils.isCreatable(replaced);
 	}
 	
 	private static EventHandler<KeyEvent> filtro() {

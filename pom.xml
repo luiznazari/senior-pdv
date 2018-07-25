@@ -93,6 +93,13 @@
 			<artifactId>commons-lang3</artifactId>
 		</dependency>
 
+		<!-- UI -->
+		<dependency>
+			<groupId>org.controlsfx</groupId>
+			<artifactId>controlsfx</artifactId>
+			<version>9.0.0</version>
+		</dependency>
+
 		<!-- TESTES -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

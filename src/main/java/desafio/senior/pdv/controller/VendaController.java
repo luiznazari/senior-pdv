@@ -7,6 +7,7 @@ import java.util.function.BiConsumer;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
+import org.controlsfx.control.textfield.TextFields;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -15,6 +16,7 @@ import desafio.senior.pdv.javafx.TableViewBuilder;
 import desafio.senior.pdv.model.Documento;
 import desafio.senior.pdv.model.DocumentoItem;
 import desafio.senior.pdv.model.Produto;
+import desafio.senior.pdv.model.dto.ProdutoStringConverter;
 import desafio.senior.pdv.repository.DocumentoRepository;
 import desafio.senior.pdv.service.ProdutoService;
 import desafio.senior.pdv.service.SeniorValidacaoException;
@@ -61,9 +63,10 @@ public class VendaController extends FxController {
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		this.documento = new Documento();
 		this.criarTabelaProdutosVenda(resources);
 		this.criarEventoHabilitarBtnAdicionarProduto();
-		this.documento = new Documento();
+		this.criarAutocompleteProdutos();
 	}
 	
 	private void criarTabelaProdutosVenda(ResourceBundle resourceBundle) {
@@ -101,13 +104,20 @@ public class VendaController extends FxController {
 		});
 	}
 	
+	private void criarAutocompleteProdutos() {
+		TextFields.bindAutoCompletion(tfCodigoProduto, suggestionFetchRequest -> {
+			String codigo = suggestionFetchRequest.getUserText();
+			return produtoService.buscarTodosContendoCodigo(codigo);
+		}, new ProdutoStringConverter());
+	}
+	
 	private void removerProdutoVenda(Produto produto) {
 		this.documento = vendaService.removerProdutoDaVenda(documento, produto);
 		this.atualizarDadosVenda();
 	}
 	
 	public void adicionarProduto() {
-		String codigoProduto = tfCodigoProduto.getText();
+		String codigoProduto = ProdutoStringConverter.extrairCodigo(tfCodigoProduto.getText());
 		
 		Optional<Produto> optProduto = produtoService.buscarPorCodigo(codigoProduto);
 		if (!optProduto.isPresent()) {

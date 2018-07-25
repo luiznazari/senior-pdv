@@ -1,10 +1,14 @@
 package desafio.senior.pdv.service;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Optional;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
+import org.springframework.data.domain.ExampleMatcher.StringMatcher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -40,10 +44,23 @@ public class ProdutoService extends AbstractCrudService<Produto, ProdutoReposito
 			return Optional.empty();
 		}
 		
+		return getRepository().findOne(this.construirExamplePorCodigo(codigoProduto, StringMatcher.EXACT));
+	}
+	
+	public Collection<Produto> buscarTodosContendoCodigo(String codigoProduto) {
+		if (StringUtils.isBlank(codigoProduto)) {
+			return Collections.emptyList();
+		}
+		return getRepository()
+			.findAll(this.construirExamplePorCodigo(codigoProduto, StringMatcher.CONTAINING));
+	}
+	
+	private Example<Produto> construirExamplePorCodigo(String codigoProduto, StringMatcher stringMatcher) {
 		Produto produto = new Produto();
 		produto.setCodigo(codigoProduto.trim());
 		produto.setValor(null);
-		return getRepository().findOne(Example.of(produto));
+		ExampleMatcher exampleMatcher = ExampleMatcher.matching().withStringMatcher(stringMatcher);
+		return Example.of(produto, exampleMatcher);
 	}
 	
 }
